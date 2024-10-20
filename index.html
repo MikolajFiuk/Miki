@@ -9,17 +9,21 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-image: url('misurina-sunset.jpg');
-            background-size: cover;
-            background-position: center;
             color: white;
             text-align: center;
-            animation: fadeIn 2s; /* Animacja fadeIn dla całego ciała */
+            overflow: hidden; /* Ukrywa przewijanie */
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .video-background {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1; /* Ustawia wideo za innymi elementami */
+            transform: translate(-50%, -50%);
         }
 
         h1 {
@@ -79,14 +83,25 @@
         footer p {
             animation: fadeIn 2s; /* Animacja fadeIn dla stopki */
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
+    <!-- Wideo w tle -->
+    <video class="video-background" autoplay muted loop>
+        <source src="fantasy-mountain-landscape.1920x1080.mp4" type="video/mp4">
+        Twoja przeglądarka nie obsługuje wideo HTML5.
+    </video>
+
     <h1>Projekty Mikołaja Fiuka 💡</h1>
     <div class="projects">
         <ul>
             <li>Projekt 1: Strona internetowa</li>
-            <li>Projekt 2: Programowanie C++</li> <!-- Poprawiłem błąd w tagu -->
+            <li>Projekt 2: Programowanie C++</li>
             <li>Projekt 3: Serwer Minecraft</li>
         </ul>
     </div>
