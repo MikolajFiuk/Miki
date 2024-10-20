@@ -14,32 +14,70 @@
             background-position: center;
             color: white;
             text-align: center;
+            animation: fadeIn 2s; /* Animacja fadeIn dla całego ciała */
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         h1 {
             margin-top: 50px;
             font-size: 3em;
+            animation: slideIn 1s; /* Animacja slideIn dla nagłówka */
         }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
         .projects {
             margin-top: 30px;
         }
+
         .projects ul {
             list-style-type: none;
             padding: 0;
         }
+
         .projects ul li {
             font-size: 1.5em;
             margin: 10px 0;
+            transition: transform 0.3s; /* Dodanie płynnego przejścia */
         }
+
+        .projects ul li:hover {
+            transform: scale(1.1); /* Powiększenie przy najechaniu myszką */
+        }
+
         .projects ul li::before {
             content: "💻 "; /* Dodaje emotikonkę przed każdym projektem */
         }
+
         .link-to-site {
             margin-top: 20px;
             font-size: 1.2em;
         }
+
+        .link-to-site a {
+            color: yellow;
+            text-decoration: none;
+            transition: color 0.3s; /* Płynna zmiana koloru */
+        }
+
+        .link-to-site a:hover {
+            color: orange; /* Zmiana koloru linku przy najechaniu */
+        }
+
         footer {
             margin-top: 50px;
             font-size: 1em;
+        }
+
+        footer p {
+            animation: fadeIn 2s; /* Animacja fadeIn dla stopki */
         }
     </style>
 </head>
@@ -48,12 +86,12 @@
     <div class="projects">
         <ul>
             <li>Projekt 1: Strona internetowa</li>
-            <li>Projekt 2: Programowanie CC++ /li>
+            <li>Projekt 2: Programowanie C++</li> <!-- Poprawiłem błąd w tagu -->
             <li>Projekt 3: Serwer Minecraft</li>
         </ul>
     </div>
     <div class="link-to-site">
-        <p>Odwiedź moją stronę: <a href="https://github.com/MikolajFiuk/Miki2" target="_blank" style="color: yellow;">Kliknij tutaj! 🌐</a></p>
+        <p>Odwiedź moją stronę: <a href="https://github.com/MikolajFiuk/Miki2" target="_blank">Kliknij tutaj! 🌐</a></p>
     </div>
     <footer>
         <p>© 2024 Mikołaj Fiuk. Wszystkie prawa zastrzeżone 😊</p>
